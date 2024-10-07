@@ -22,16 +22,10 @@ struct Exercise2Page: View {
     var body: some View {
         NavigationStack {
             VStack {
-                ForEach(self.translations, id: \.self) { t in
+                ForEach(self.translations, id: \.self) { text in
                     HStack {
-                        Text(t)
+                        Text(text)
                         Spacer()
-                        Button {
-                            guard let index = self.translations.index(of: t) else { return }
-                            translations.remove(at: index)
-                        } label: {
-                            Image(system: "minus")
-                        }
                     }
                     .padding()
                 }
